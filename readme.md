@@ -1,1 +1,1 @@
-#Little funny moving windows in python
+# Little funny moving windows in python
