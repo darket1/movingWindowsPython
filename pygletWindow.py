@@ -28,8 +28,6 @@ window.push_handlers(keys)
 def update(dt):
     global posX
     global posY
-    global velX
-    global velY
     window.set_location(int(posX-dim2), int(posY-dim2)) # change window pos
 
     if keys[pyglet.window.key.W]: #input handler
