@@ -38,7 +38,7 @@ def update(dt):
     if keys[pyglet.window.key.D]:
         posX+=velX
     
-    if posX > screenX[0]-dim2:
+    if posX > screenX[0]-dim2: #over check
         posX = screenX[0]-dim2
     if posX < dim2:
         posX = dim2
