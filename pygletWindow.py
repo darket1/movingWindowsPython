@@ -1,5 +1,4 @@
 import pyglet
-from random import randint
 
 display = pyglet.display.get_display()          # get display resolution
 screens = display.get_screens()
