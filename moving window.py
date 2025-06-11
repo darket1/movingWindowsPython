@@ -15,13 +15,18 @@ movingA = False
 movingS = False
 movingD = False
 
+clock = pygame.time.Clock()
+fps = 60
+dt = clock.tick(fps)
+
 posX = screenInfo.current_w/2
 posY = screenInfo.current_h/2
-velX = screenInfo.current_w/10000
-velY = screenInfo.current_h/10000
+velX = screenInfo.current_w * 0.0004 * dt
+velY = screenInfo.current_h * 0.0004 * dt
 
 running = True
 while running:
+    clock.tick(fps)
     pygame.display.set_window_position((posX-dim/2, posY-dim/2)) # update movement
 
     for event in pygame.event.get():
