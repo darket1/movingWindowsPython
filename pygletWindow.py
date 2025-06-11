@@ -5,14 +5,14 @@ screens = display.get_screens()
 screenX = [screen.width for screen in screens]
 screenY = [screen.height for screen in screens]
 
+fps = 60
+
 dim = int(screenY[0]/15) # always get the main screen resolution
 posX = int(screenX[0]/2)
 posY = int(screenY[0]/2)
-velX = int(screenX[0]/150)
-velY = int(screenY[0]/150)
+velX = int(screenX[0] * 0.5)
+velY = int(screenY[0] * 0.5)
 dim2 = dim/2
-
-fps = 60
 
 window = pyglet.window.Window(style=pyglet.window.Window.WINDOW_STYLE_BORDERLESS) # init display
 window.set_size(dim, dim)
@@ -30,13 +30,13 @@ def update(dt):
     window.set_location(int(posX-dim2), int(posY-dim2)) # change window pos
 
     if keys[pyglet.window.key.W]: #input handler
-        posY-=velY
+        posY-=velY*dt
     if keys[pyglet.window.key.S]:
-        posY+=velY
+        posY+=velY*dt
     if keys[pyglet.window.key.A]:
-        posX-=velX
+        posX-=velX*dt
     if keys[pyglet.window.key.D]:
-        posX+=velX
+        posX+=velX*dt
     
     if posX > screenX[0]-dim2: #over check
         posX = screenX[0]-dim2
