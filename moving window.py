@@ -66,12 +66,12 @@ while running:
 
     if posX > screenInfo.current_w-dim/2: # over the edge check
         posX = screenInfo.current_w-dim/2
-    if posX < 0+dim/2:
-        posX = 0+dim/2
+    if posX < dim/2:
+        posX = dim/2
 
     if posY > screenInfo.current_h-dim/2:
         posY = screenInfo.current_h-dim/2
-    if posY < 0+dim/2:
-        posY = 0+dim/2
+    if posY < dim/2:
+        posY = dim/2
 
 pygame.quit()
